@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-handwriting: 'Great Vibes', cursive;
+  --font-script: 'Dancing Script', cursive;
+
+  --color-romantic-dark: #0f0a14;
+  --color-romantic-pink: #ff69b4;
+  --color-romantic-rose: #ffccd5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-romantic-dark);
+  color: white;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 24px;
+}
+
+/* Custom Text Effects */
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 105, 180, 0.6), 0 0 40px rgba(255, 105, 180, 0.3);
+}
+
+.text-glow-soft {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Component specifics */
+.cursor-glow {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255,105,180,0.8) 0%, rgba(255,105,180,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s;
+  will-change: transform;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  will-change: transform;
+  box-shadow: 0 0 10px rgba(255, 192, 203, 0.8);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 105, 180, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 105, 180, 0.6);
+}
+
+/* Background animation */
+.bg-romantic-gradient {
+  background: radial-gradient(ellipse at bottom, #2b1120 0%, #0f0a14 100%);
+}
+
+.romantic-gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #ffccd5 0%, #ff69b4 100%);
+}
